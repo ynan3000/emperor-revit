@@ -1,0 +1,11 @@
+title: Sync Views
+author: Yahya Morcy
+engine:
+  persistent: true
+tooltip: >-
+  Plans open on the same spot: when you switch from one plan view to another, the new plan keeps the
+  same zoom and position.
+
+  How: click to turn it ON (red icon) / OFF (grey icon). Works between floor, ceiling, structural and
+  area plans only - never for 3D views, sections or elevations. Remembered and applied every time
+  Revit opens.

@@ -1,0 +1,9 @@
+title: Vertical Align
+author: Yahya Morcy
+tooltip: >-
+  Put diffuser centres on one vertical line (a column).
+
+  How: 1) select the diffusers to move  2) pick the MAIN diffuser - the others move left / right
+  to its centre line. Works in plan views. One undo step.
+engine:
+  clean: true

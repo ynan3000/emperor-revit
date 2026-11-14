@@ -1,0 +1,6 @@
+{
+  "_help": "Dialog texts used by the automatic 'Select the Position' answering. Change them for a non-English Revit.",
+  "dialog_titles": ["Location and Site"],
+  "prompt_markers": ["Select the Position in"],
+  "ok_labels": ["OK"]
+}

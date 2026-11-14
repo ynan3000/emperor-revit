@@ -1,0 +1,10 @@
+title: Emperor Exporter
+author: Yahya Morcy
+version: 3.2.1
+tooltip: >-
+  Batch export sheets and views to PDF, DWG, DXF, DGN, DWF, DWFx, NWC, IFC and images.
+
+  How: 1) Selection tab - tick sheets or views and set the file name rule  2) Formats tab - tick
+  the formats and their options (DWG: "Bind images as OLE" puts the pictures inside the DWG)  3) Create tab - choose the folder and press Export. Save your
+  settings as a Profile from the top bar.
+min_revit_version: 2022

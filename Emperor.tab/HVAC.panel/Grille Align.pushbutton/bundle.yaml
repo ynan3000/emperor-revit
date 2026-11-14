@@ -1,0 +1,10 @@
+title: Grille Align
+author: Yahya Morcy
+tooltip: >-
+  Spread air terminals evenly between two references (walls, columns, beams - host or linked).
+
+  How: 1) select the grilles / diffusers (or pick them when asked)  2) pick the first reference
+  at one end  3) pick the second reference at the other end. The grilles are spaced equally
+  between the two near faces. One undo step.
+engine:
+  clean: true

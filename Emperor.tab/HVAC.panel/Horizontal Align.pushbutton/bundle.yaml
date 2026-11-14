@@ -1,0 +1,9 @@
+title: Horizontal Align
+author: Yahya Morcy
+tooltip: >-
+  Put diffuser centres on one horizontal line (a row).
+
+  How: 1) select the diffusers to move  2) pick the MAIN diffuser - the others move up / down
+  to its centre line. Works in plan views. One undo step.
+engine:
+  clean: true

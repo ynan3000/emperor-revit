@@ -1,0 +1,13 @@
+title: View Manager
+author: Yahya Morcy
+version: 1.1.0
+tooltip: >-
+  Create or rename plan views for many levels at once, named from the level, and give views a view template.
+
+  How: tick the levels, tick the view types (floor, ceiling, structural plans - several at once), write a
+  prefix / suffix and the separator (default "-"; view name = prefix-level name-suffix), choose a template for
+  the new views if you want one, press Preview, then Create. For levels that already have a view tick one:
+  skip them, rename the existing view, or create a new view. "Template for views..." gives a template to the views you tick
+  (views selected in the Project Browser are ticked for you). One undo step. Remembered per project.
+engine:
+  clean: true

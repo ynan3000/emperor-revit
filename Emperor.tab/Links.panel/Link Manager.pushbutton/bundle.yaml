@@ -1,0 +1,10 @@
+title: Link Manager
+author: Yahya Morcy
+version: 2.1.0
+tooltip: >-
+  Every Revit link and instance in one table: status, path, worksets, shared sites, pin state,
+  room bounding. Pin / reload / unload / remove, link many files at once, copy links to other
+  open models.
+
+  How: tick links (or instances after expanding a row), then use the buttons. Click a row to
+  expand it; click a column header to sort.
