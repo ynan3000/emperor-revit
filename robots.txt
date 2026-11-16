@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ynan3000.github.io/emperor-revit/sitemap.xml

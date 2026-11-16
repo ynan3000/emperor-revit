@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emperor for Revit – Free pyRevit Toolkit for MEP &amp; HVAC Engineers</title>
+<meta name="description" content="Emperor is a free, open-source pyRevit extension for Autodesk Revit: grille align, diffuser array, smart insulation, smart tag, view manager, link manager, Excel to drafting view, DWG export with images, and a Revit connector for Claude. Built for MEP and HVAC engineers.">
+<meta name="keywords" content="Revit, pyRevit, pyRevit extension, Revit add-in, Revit plugin free, MEP, HVAC, BIM, Revit HVAC tools, smart tag Revit, duct insulation Revit, diffuser array, grille align, Revit link manager, Excel to Revit drafting view, Revit DWG export images, Claude Revit, إضافة ريفيت, ريفيت مجاني">
+<meta name="author" content="Yahya Morcy">
+<link rel="canonical" href="https://ynan3000.github.io/emperor-revit/">
+<link rel="icon" type="image/png" href="img/crown.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Emperor for Revit – Free pyRevit Toolkit for MEP & HVAC Engineers">
+<meta property="og:description" content="16 free tools for Revit: grille align, diffuser array, smart insulation, smart tag, view manager, link manager, Excel to drafting, DWG with images, and a Claude connector.">
+<meta property="og:url" content="https://ynan3000.github.io/emperor-revit/">
+<meta property="og:image" content="https://ynan3000.github.io/emperor-revit/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Emperor for Revit – Free pyRevit Toolkit">
+<meta name="twitter:description" content="16 free Revit tools for MEP & HVAC engineers. Open source (MIT).">
+<meta name="twitter:image" content="https://ynan3000.github.io/emperor-revit/img/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Emperor for Revit",
+  "alternateName": "Emperor pyRevit extension",
+  "applicationCategory": "DesignApplication",
+  "applicationSubCategory": "Autodesk Revit add-in (pyRevit extension)",
+  "operatingSystem": "Windows",
+  "softwareRequirements": "Autodesk Revit 2025 or newer, pyRevit",
+  "softwareVersion": "1.6.2",
+  "license": "https://opensource.org/licenses/MIT",
+  "isAccessibleForFree": true,
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "downloadUrl": "https://github.com/ynan3000/emperor-revit/releases/latest",
+  "url": "https://ynan3000.github.io/emperor-revit/",
+  "image": "https://ynan3000.github.io/emperor-revit/img/og.jpg",
+  "description": "Free, open-source pyRevit extension with 16 tools for Revit, built for MEP and HVAC engineers.",
+  "author": {"@type": "Person", "name": "Yahya Morcy", "url": "https://www.linkedin.com/in/yahya-morcy/"},
+  "sameAs": ["https://github.com/ynan3000/emperor-revit", "https://www.youtube.com/playlist?list=PLGEBasj0nHd8"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Is Emperor for Revit free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Emperor is free and open source under the MIT License. You can use it at work, change it and share it."}},
+    {"@type": "Question", "name": "Which Revit version does Emperor support?", "acceptedAnswer": {"@type": "Answer", "text": "Emperor is tested on Revit 2025 with pyRevit 7. Most tools are plain pyRevit scripts; the DWG option that binds images as OLE needs Revit 2025 or newer."}},
+    {"@type": "Question", "name": "How do I install Emperor?", "acceptedAnswer": {"@type": "Answer", "text": "Install pyRevit, download Emperor_v1.6.2.zip from GitHub releases, extract it into your pyRevit extensions folder so you get Emperor.extension, then start Revit or reload pyRevit."}},
+    {"@type": "Question", "name": "Does Emperor need AutoCAD to put images inside DWG files?", "acceptedAnswer": {"@type": "Answer", "text": "No. The Emperor Exporter binds sheet images into the DWG as OLE objects with its own library, without AutoCAD."}}
+  ]
+}
+</script>
+<style>
+:root{--red:#b81c24;--red-d:#7a0f14;--ink:#1d1d1f;--mut:#5f6368;--bg:#fff;--soft:#fbf3f3;--line:#ecdcdc}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:var(--red)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+header.top{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:14px;height:62px}
+header.top img{width:34px;height:auto}
+header.top b{font-size:19px}
+header.top nav{margin-left:auto;display:flex;gap:20px;font-weight:500}
+header.top nav a{color:var(--ink);text-decoration:none}
+header.top nav a.btn-s{background:var(--red);color:#fff;padding:7px 16px;border-radius:999px}
+.hero{background:radial-gradient(ellipse at 50% 30%,#a51a22 0%,#7a0f14 70%);color:#fff;text-align:center;padding:76px 0 70px}
+.hero img.crown{width:120px;height:auto;margin-bottom:10px}
+.hero h1{font-size:clamp(36px,6vw,62px);margin:0;line-height:1.1;letter-spacing:-.5px}
+.hero p.lead{font-size:clamp(18px,2.4vw,23px);margin:16px auto 6px;max-width:760px;color:#ffe3e5}
+.hero p.ar{font-size:20px;margin:0 auto 28px;color:#fff0f1}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:999px;font-weight:600;font-size:17px;text-decoration:none}
+.btn.w{background:#fff;color:var(--red)}
+.btn.o{border:2px solid rgba(255,255,255,.7);color:#fff}
+.badges{margin-top:26px;font-size:15px;color:#ffd5d8}
+section{padding:66px 0}
+section.alt{background:var(--soft)}
+h2{font-size:clamp(26px,3.4vw,36px);margin:0 0 6px;text-align:center}
+.sub{text-align:center;color:var(--mut);margin:0 0 36px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(122,15,20,.05)}
+.card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-bottom:1px solid var(--line)}
+.card .b{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{margin:0;font-size:19px}
+.card .tag{font-size:12px;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.6px}
+.card p{margin:0;color:#333;font-size:15px}
+.card p.ar{direction:rtl;text-align:right;color:var(--mut)}
+.card a.v{margin-top:auto;font-weight:600;text-decoration:none;font-size:15px}
+.video{position:relative;padding-top:56.25%;border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.15)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;list-style:none;padding:0;margin:0}
+.steps li{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 18px 18px 64px;position:relative}
+.steps li:before{counter-increment:s;content:counter(s);position:absolute;left:18px;top:18px;width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-weight:700}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:0 auto 12px;max-width:820px}
+summary{font-weight:600;cursor:pointer}
+footer{background:#2a0a0d;color:#f3d6d8;padding:34px 0;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+footer a{color:#fff}
+@media(max-width:640px){header.top nav a:not(.btn-s){display:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <img src="img/crown.png" alt="Emperor crown logo"><b>Emperor</b>
+  <nav><a href="#tools">Tools</a><a href="#videos">Videos</a><a href="#install">Install</a><a href="#faq">FAQ</a>
+  <a class="btn-s" href="https://github.com/ynan3000/emperor-revit/releases/latest">Download</a></nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <img class="crown" src="img/crown.png" alt="Emperor for Revit logo">
+  <h1>Emperor for Revit</h1>
+  <p class="lead">A free pyRevit toolkit for engineers – especially MEP &amp; HVAC. Sixteen tools that turn hours of clicking in Revit into seconds.</p>
+  <p class="ar" dir="rtl">إضافة مجانية ومفتوحة المصدر لـ Revit، لكل المهندسين وخصوصاً مهندسين الميكانيكا.</p>
+  <div class="cta">
+    <a class="btn w" href="https://github.com/ynan3000/emperor-revit/releases/latest">⬇ Download free (v1.6.2)</a>
+    <a class="btn o" href="https://www.youtube.com/playlist?list=PLGEBasj0nHd8">▶ Watch the 12-part series</a>
+  </div>
+  <div class="badges">Revit 2025 · pyRevit 7 · Windows · MIT License · <a href="https://github.com/ynan3000/emperor-revit" style="color:#fff">Source on GitHub</a></div>
+</div></section>
+
+<section id="tools"><div class="wrap">
+  <h2>The tools</h2>
+  <p class="sub">One <b>Emperor</b> tab in Revit. Every tool has a short video.</p>
+  <div class="grid">
+    <article class="card"><img loading="lazy" src="img/tool01.jpg" alt="Grille Align in Revit spacing air grilles evenly">
+      <div class="b"><span class="tag">HVAC</span><h3>Grille Align &amp; Horizontal / Vertical Align</h3>
+      <p>Space grilles evenly against a wall or any reference, even in a linked model: x from the wall, 2x between grilles. Line them up on one axis.</p>
+      <p class="ar">توزيع الجريلات بمسافات متساوية ورصّها على خط واحد.</p>
+      <a class="v" href="https://www.youtube.com/watch?v=9QMJPErM2Ao&list=PLGEBasj0nHd8">▶ Watch (1:13)</a></div></article>
+    <article class="card"><img loading="lazy" src="img/tool02.jpg" alt="Diffuser Array completing a row of supply and return diffusers">
+      <div class="b"><span class="tag">HVAC</span><h3>Diffuser Array</h3>
+      <p>Place one or two diffusers and the tool completes the row – one type or alternating supply / return – with your count, spacing and direction.</p>
+      <p class="ar">حط ديفيوزر أو اتنين والأداة تكمّل الصف.</p>
+      <a class="v" href="https://www.youtube.com/watch?v=7pvVpgqM_BY&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
+    <article class="card"><img loading="lazy" src="img/tool03.jpg" alt="Smart Insulation dialog for duct and pipe systems">
+      <div class="b"><span class="tag">HVAC</span><h3>Smart Insulation</h3>
+      <p>Insulation type and thickness per duct and pipe system, for the whole model, the active view or a selection. Adds what is missing, updates the rest, and reports.</p>
+      <p class="ar">عزل كل الدكت والمواسير مرة واحدة.</p>
+      <a class="v" href="https://www.youtube.com/watch?v=ugSK96zflLU&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
+    <article class="card"><img loading="lazy" src="img/tool04.jpg" alt="Smart Tag tagging ducts and air terminals without overlaps">
+      <div class="b"><span class="tag">HVAC</span><h3>Smart Tag</h3>
+      <p>Tags every duct, terminal and equipment in the view without overlaps. <b>Learn from my changes</b>: move a few tags by hand and it places the rest your way.</p>
+      <p class="ar">تاجات للفيو كله من غير ما تركب على بعض، وبتتعلم من تعديلاتك.</p>
+      <a class="v" href="https://www.youtube.com/watch?v=Z1AoTgrZBYo&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
+    <article class="card"><img loading="lazy" src="img/tool05.jpg" alt="System Box 3D view of a single duct system">
+      <div class="b"><span class="tag">Views</span><h3>System Box &amp; Crop to 3D</h3>
+      <p>Open a 3D view of just one system, or draw a rectangle on a plan and see that area in 3D.</p>
+      <p class="ar">شوف أي سيستم أو أي منطقة في 3D فوراً.</p>
+      <a class="v" href="https://www.youtube.com/watch?v=gd7u9qhaN9o&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
+    <article class="card"><img loading="lazy" src="img/tool06.jpg" alt="View Manager creating floor plans for every level">
+      <div class="b"><span class="tag">Views</span><h3>View Manager</h3>
+      <p>Floor, ceiling and structural plans for every level in one go, with prefix, suffix and view template. Existing views: skip, rename or create new.</p>
+      <p class="ar">Plans لكل الأدوار مرة واحدة.</p>
+      <a class="v" href="https://www.youtube.com/watch?v=J5X7eD6ITug&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
+    <article class="card"><img loading="lazy" src="img/tool07.jpg" alt="Room and Space Manager table in Revit">
+      <div class="b"><span class="tag">Room &amp; Space</span><h3>Room &amp; Space Manager</h3>
+      <p>All rooms (linked too) and spaces in one table: bulk rename, renumber and heights, find &amp; replace, match spaces to rooms, create spaces on every level.</p>
+      <p class="ar">كل الـ Rooms والـ Spaces في جدول واحد.</p>
+      <a class="v" href="https://www.youtube.com/watch?v=uWj1T2FWXXg&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
+    <article class="card"><img loading="lazy" src="img/tool08.jpg" alt="Link Manager copying Revit links to another model">
+      <div class="b"><span class="tag">Links</span><h3>Link Manager</h3>
+      <p>Every Revit link on one screen: status, instances, pin / unpin / reload all. Copy links to another model with the same shared coordinates and locations.</p>
+      <p class="ar">كل الـ Links في شاشة واحدة، ونسخها لموديل تاني.</p>
+      <a class="v" href="https://www.youtube.com/watch?v=iGpuJmGZzNo&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
+    <article class="card"><img loading="lazy" src="img/tool09.jpg" alt="Excel table imported into a Revit drafting view with colours">
+      <div class="b"><span class="tag">Import</span><h3>Excel to Drafting</h3>
+      <p>Bring an Excel print area into a drafting view, keeping colours, fonts and merged cells.</p>
+      <p class="ar">جدول الإكسل جوه Revit بنفس شكله.</p>
+      <a class="v" href="https://www.youtube.com/watch?v=LlYSj4nS8I0&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
+    <article class="card"><img loading="lazy" src="img/tool10.jpg" alt="Emperor Exporter for PDF and DWG export">
+      <div class="b"><span class="tag">Export</span><h3>Emperor Exporter</h3>
+      <p>PDF, DWG, DXF, DGN, DWF, IFC, NWC and images from one screen. DWG with images bound inside (OLE, no AutoCAD needed), black-line PDFs without touching the model.</p>
+      <p class="ar">كل الصيغ من شاشة واحدة، وDWG بالصور جوه الملف.</p>
+      <a class="v" href="https://www.youtube.com/watch?v=-5-IUf1h95c&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
+    <article class="card"><img loading="lazy" src="img/tool11.jpg" alt="Claude Connector linking Revit to Claude Desktop">
+      <div class="b"><span class="tag">AI</span><h3>Claude Connector</h3>
+      <p>Connect Revit to Claude Desktop. Claude reads the open model, does a dry run and asks before changing anything; one Ctrl+Z undoes it. You control write and scripting access.</p>
+      <p class="ar">Claude يقرا الموديل ويشتغل عليه، بإذنك.</p>
+      <a class="v" href="https://www.youtube.com/watch?v=TIIqx_2DvDA&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
+    <article class="card"><img loading="lazy" src="img/tool12.jpg" alt="Sync Views keeping zoom between floor plans">
+      <div class="b"><span class="tag">Toggles</span><h3>Sync Views &amp; Shortcut Guard</h3>
+      <p>Keep zoom and position while switching plans – even after visiting a section. Keep the keyboard in English whenever Revit is active so shortcuts always work.</p>
+      <p class="ar">تفاصيل صغيرة بتريّحك طول اليوم.</p>
+      <a class="v" href="https://www.youtube.com/watch?v=E-mO2x-oAB4&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
+  </div>
+</div></section>
+
+<section id="videos" class="alt"><div class="wrap">
+  <h2>Watch the series</h2>
+  <p class="sub">12 short videos, one per tool. Silent, with on-screen captions in Egyptian Arabic.</p>
+  <div class="video"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLGEBasj0nHd8" title="Emperor for Revit video series" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+</div></section>
+
+<section id="install"><div class="wrap">
+  <h2>Install in two minutes</h2>
+  <p class="sub">Works with Autodesk Revit and <a href="https://github.com/pyrevitlabs/pyRevit">pyRevit</a>.</p>
+  <ol class="steps">
+    <li><b>Install pyRevit</b><br>Get it from the pyRevit GitHub page if you do not have it yet.</li>
+    <li><b>Download Emperor</b><br><a href="https://github.com/ynan3000/emperor-revit/releases/latest">Emperor_v1.6.2.zip</a> from GitHub releases.</li>
+    <li><b>Extract</b><br>Into your pyRevit extensions folder, so you get <code>Emperor.extension</code>.</li>
+    <li><b>Start Revit</b><br>Or pyRevit &gt; Reload. The <b>Emperor</b> tab appears.</li>
+  </ol>
+</div></section>
+
+<section id="faq" class="alt"><div class="wrap">
+  <h2>FAQ</h2>
+  <p class="sub">&nbsp;</p>
+  <details open><summary>Is Emperor for Revit free?</summary><p>Yes. It is free and open source under the MIT License – use it at work, change it and share it.</p></details>
+  <details><summary>Which Revit versions are supported?</summary><p>It is tested on Revit 2025 with pyRevit 7. The DWG option that binds images as OLE needs Revit 2025 or newer.</p></details>
+  <details><summary>Do I need AutoCAD to put images inside DWG files?</summary><p>No. The Emperor Exporter binds the images into the DWG itself, without AutoCAD.</p></details>
+  <details><summary>Is it only for HVAC engineers?</summary><p>No. The HVAC panel is for mechanical engineers, but View Manager, Link Manager, Room &amp; Space Manager, Excel to Drafting, the Exporter and the toggles help every discipline.</p></details>
+  <details><summary>Where do I report a bug or ask for a feature?</summary><p>Open an issue on <a href="https://github.com/ynan3000/emperor-revit/issues">GitHub</a> or message me on <a href="https://www.linkedin.com/in/yahya-morcy/">LinkedIn</a>.</p></details>
+</div></section>
+
+<footer><div class="wrap">
+  <div>Emperor for Revit · made by <a href="https://www.linkedin.com/in/yahya-morcy/">Yahya Morcy</a> · MIT License</div>
+  <div><a href="https://github.com/ynan3000/emperor-revit">GitHub</a> · <a href="https://www.youtube.com/playlist?list=PLGEBasj0nHd8">YouTube</a> · <a href="https://www.linkedin.com/in/yahya-morcy/">LinkedIn</a></div>
+</div></footer>
+</body>
+</html>
