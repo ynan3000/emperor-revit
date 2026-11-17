@@ -864,15 +864,16 @@ def _element_name(elem):
             return u''
 
 
+from pyrevit.compat import get_elementid_value_func as _get_eid_value_func
+_EID_VALUE = _get_eid_value_func()   # ElementId.Value (2024+) or .IntegerValue (older)
+
+
 def _id_value(eid):
-    # ElementId.IntegerValue is removed in newer Revit versions; Value exists from 2024.
+    """ElementId -> int on every Revit version (-1 if it cannot be read)."""
     try:
-        return int(eid.Value)
-    except:
-        try:
-            return int(eid.IntegerValue)
-        except:
-            return -1
+        return int(_EID_VALUE(eid))
+    except Exception:
+        return -1
 
 
 def _element_id(elem):

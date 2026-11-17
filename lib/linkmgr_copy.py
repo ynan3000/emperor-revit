@@ -53,7 +53,7 @@ def set_workset(element, wid):
         return False
     p = element.get_Parameter(DB.BuiltInParameter.ELEM_PARTITION_PARAM)
     if p is not None and not p.IsReadOnly:
-        p.Set(wid.IntegerValue)
+        p.Set(wid.IntegerValue)  # compat-ignore: WorksetId keeps IntegerValue in every Revit version
         return True
     return False
 

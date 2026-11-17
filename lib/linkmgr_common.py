@@ -18,12 +18,13 @@ CHEV_CLOSED = u"\u25B8"
 CHEV_OPEN = u"\u25BE"
 
 
+from pyrevit.compat import get_elementid_value_func as _get_eid_value_func
+_EID_VALUE = _get_eid_value_func()   # ElementId.Value (2024+) or .IntegerValue (older)
+
+
 def eid(element_id):
-    """ElementId -> int, works on every Revit version."""
-    try:
-        return int(element_id.Value)
-    except Exception:
-        return int(element_id.IntegerValue)
+    """ElementId -> int on every Revit version."""
+    return int(_EID_VALUE(element_id))
 
 
 def ename(element):

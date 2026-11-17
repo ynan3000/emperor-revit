@@ -1,11 +1,14 @@
-title: Smart Tag
+title:
+  en_us: Smart Tag
 author: Yahya Morcy
-tooltip: >-
-  Tag ducts, pipes, flex, air terminals, equipment and accessories in the active view in one go.
+tooltip:
+  en_us: >-
+    Tag ducts, pipes, flex, air terminals, equipment and accessories in the active view in one go.
 
-  How: open a plan, section or elevation, tick the categories, pick the tag type for each and press Tag.
-  Elements that already have a tag, short ducts / pipes and ducts with 0 L/s are skipped; tags sit beside the duct,
-  not on it, and move to a free spot - a tag with no free spot is left out. "Remove tags" deletes the tags of the ticked categories in the view.
-  One undo step. Your choices are remembered per project.
+    How: open a plan, section or elevation, tick the categories, pick the tag type for each and press Tag.
+    Elements that already have a tag, short ducts / pipes and ducts with 0 L/s are skipped; tags sit beside the duct,
+    not on it, and move to a free spot - a tag with no free spot is left out. "Remove tags" deletes the tags of the ticked categories in the view.
+    One undo step. Your choices are remembered per project.
 engine:
   clean: true
+help_url: https://ynan3000.github.io/emperor-revit/#smart-tag

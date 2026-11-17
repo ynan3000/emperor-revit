@@ -1,10 +1,13 @@
-title: Diffuser Array
+title:
+  en_us: Diffuser Array
 author: Yahya Morcy
-tooltip: >-
-  Array one diffuser, or alternate supply (SD) and return (RD) diffusers, at a fixed spacing.
+tooltip:
+  en_us: >-
+    Array one diffuser, or alternate supply (SD) and return (RD) diffusers, at a fixed spacing.
 
-  How: open a plan view, (optional) preselect 1 or 2 diffusers, press the button, choose the
-  pattern, number of copies, spacing X in mm and the direction, then Continue. Copies keep the
-  pin state of their source. One undo step.
+    How: open a plan view, (optional) preselect 1 or 2 diffusers, press the button, choose the
+    pattern, number of copies, spacing X in mm and the direction, then Continue. Copies keep the
+    pin state of their source. One undo step.
 engine:
   clean: true
+help_url: https://ynan3000.github.io/emperor-revit/#diffuser-array

@@ -13,3 +13,6 @@ It contains:
 
 The file name carries the version on purpose: a newer Emperor ships a file with a new name, so it can
 be loaded in a Revit session that already loaded the older one.
+
+Source code: src/EmperorDwg/ in the repository (https://github.com/ynan3000/emperor-revit/tree/main/src/EmperorDwg),
+with build scripts (build.ps1 / build.sh).

@@ -10,12 +10,13 @@ from pyrevit import revit, forms, script
 import emperor_ui
 
 
+from pyrevit.compat import get_elementid_value_func as _get_eid_value_func
+_EID_VALUE = _get_eid_value_func()   # ElementId.Value (2024+) or .IntegerValue (older)
+
+
 def _eid(element_id):
-    """ElementId -> int on every Revit version (IntegerValue is gone from Revit 2026)."""
-    try:
-        return int(element_id.Value)
-    except AttributeError:
-        return int(element_id.IntegerValue)
+    """ElementId -> int on every Revit version."""
+    return int(_EID_VALUE(element_id))
 
 
 
@@ -372,10 +373,7 @@ def get_perpendicular_movement_axis(ref1, ref2, center1, center2):
 
 
 def internal_to_mm(value):
-    try:
-        return DB.UnitUtils.ConvertFromInternalUnits(value, DB.UnitTypeId.Millimeters)
-    except Exception:
-        return DB.UnitUtils.ConvertFromInternalUnits(value, DB.DisplayUnitType.DUT_MILLIMETERS)
+    return DB.UnitUtils.ConvertFromInternalUnits(value, DB.UnitTypeId.Millimeters)
 
 
 def mm_text(value, decimals):

@@ -2,6 +2,9 @@
   "name": "Emperor",
   "description": "Emperor BIM Toolkit for Revit (pyRevit): HVAC tools, View Manager, Room & Space Manager, Link Manager, Excel to Drafting, Emperor Exporter and Claude Connector in one Emperor tab.",
   "author": "Yahya Morcy",
-  "version": "1.6.2",
+  "author_profile": "https://github.com/ynan3000",
+  "url": "https://github.com/ynan3000/emperor-revit.git",
+  "website": "https://ynan3000.github.io/emperor-revit/",
+  "version": "1.6.3",
   "dependencies": []
 }

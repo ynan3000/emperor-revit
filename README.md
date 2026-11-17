@@ -39,7 +39,34 @@ Every tool has a short video: [Emperor for Revit playlist](https://www.youtube.c
 - Claude Connector: Claude Desktop. Emperor downloads its own private Python once (official embeddable
   build from python.org, ~11 MB, not installed on Windows).
 
+## What Emperor does when Revit starts
+pyRevit runs Emperor's `startup.py` every time Revit starts (or pyRevit reloads). It never changes your
+pyRevit settings. What it does:
+
+- **Shortcut Guard / Sync Views** start only if you turned them ON (Toggles panel).
+- **Claude Connector** – starts a small listener on `127.0.0.1` (this PC only, port 48890-48899) that the
+  Emperor MCP server talks to. Claude can only *read* the model until you switch **Write access** ON.
+- **Claude Connector auto-connect** (ON by default) – in the background, Emperor registers its MCP server
+  with Claude so Revit shows up in Claude without any setup. This writes **outside** the extension folder:
+  - adds an `Emperor-Revit` entry to `claude_desktop_config.json` (`%APPDATA%\Claude\`, or the Microsoft
+    Store app folder) – only if Claude Desktop is installed;
+  - if the entry was added or changed, **closes and reopens Claude Desktop** so it picks it up;
+  - if Claude Code is installed: runs `claude mcp add --scope user Emperor-Revit ...` and copies the
+    *Emperor Revit Skills* skill to `%USERPROFILE%\.claude\skills\`;
+  - the first time only, if Emperor's private Python is not there yet: downloads the official embeddable
+    Python 3.12 from python.org (~11 MB, kept only if signed by the Python Software Foundation) into
+    `%LOCALAPPDATA%\Emperor\python\` – nothing is installed on Windows. This is the only network call;
+  - keeps its own settings and logs in `%APPDATA%\Emperor\`.
+
+  To stop it: **Emperor tab > Claude > Claude Connector** → untick
+  *"Connect Claude automatically whenever Revit starts"*. Nothing is registered while it is unticked.
+
 ## Install
+**With the pyRevit CLI:**
+
+    pyrevit extend ui Emperor https://github.com/ynan3000/emperor-revit.git
+
+**Or by hand:**
 1. Download `Emperor_v<version>.zip` from the latest release: https://github.com/ynan3000/emperor-revit/releases/latest
    (the ZIP holds the full source code of every tool)
 2. Close Revit.
@@ -49,6 +76,11 @@ Every tool has a short video: [Emperor for Revit playlist](https://www.youtube.c
 
 ## What is new
 See [CHANGELOG.md](CHANGELOG.md).
+
+## Source of the DWG library
+`lib/dwg/EmperorDwg_1_1.dll` (used only by Exporter > DWG > "Bind images as OLE") is built from
+[`src/EmperorDwg/`](src/EmperorDwg): ACadSharp 3.8.51 + a small patch + Emperor's own code.
+Rebuild it with `src/EmperorDwg/build.ps1` (Windows) or `build.sh` – see [its README](src/EmperorDwg/README.md).
 
 ## License
 Free for everyone under the [MIT License](LICENSE): use it, change it and share it - keep the copyright

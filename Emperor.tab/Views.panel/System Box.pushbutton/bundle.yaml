@@ -1,10 +1,13 @@
-title: System Box
+title:
+  en_us: System Box
 author: Yahya Morcy
-tooltip: >-
-  Open a 3D view boxed around a whole duct or pipe system.
+tooltip:
+  en_us: >-
+    Open a 3D view boxed around a whole duct or pipe system.
 
-  How: select (or pick) any element of the system - duct, pipe, fitting, terminal, equipment.
-  A 3D view "System Box - <system>" opens with a section box around every element of that system.
-  Run it again on the same system to refresh the box. Shift+click opens a new view instead of reusing it.
+    How: select (or pick) any element of the system - duct, pipe, fitting, terminal, equipment.
+    A 3D view "System Box - <system>" opens with a section box around every element of that system.
+    Run it again on the same system to refresh the box. Shift+click opens a new view instead of reusing it.
 engine:
   clean: true
+help_url: https://ynan3000.github.io/emperor-revit/#system-box

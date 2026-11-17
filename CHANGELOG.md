@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.6.3
+- **Newer Revit versions**: every place that read an element id now uses pyRevit's own helper
+  (`ElementId.Value` on Revit 2024+, `IntegerValue` on older), including Excel to Drafting pictures, which could
+  fail on Revit 2026. Grille Align no longer falls back to the old `DisplayUnitType` API. The code passes
+  pyRevit's Revit API compatibility checker (Revit 2021-2027) with no errors or warnings.
+- **Source of the DWG library**: `src/EmperorDwg/` holds the code of `lib/dwg/EmperorDwg_1_1.dll`
+  (ACadSharp 3.8.51 + Emperor's patch + Emperor's own code) and scripts to rebuild it.
+- Every button now has an `en_us` title and tooltip and a help link to its section on the website.
+- `extension.json` lists the repository `url` and the website.
+- README explains everything Emperor does when Revit starts (Claude Connector auto-connect) and how to turn it off.
+
 ## v1.6.2
 - **Emperor Exporter 3.2.1 - Black lines in PDF** now covers whole sheets: drafting views and legends (general
   notes, legend symbols, line styles coloured in the view) print black, and coloured text and dimensions print

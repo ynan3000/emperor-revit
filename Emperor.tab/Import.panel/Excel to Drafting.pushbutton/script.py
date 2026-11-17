@@ -32,6 +32,8 @@ import tempfile
 import traceback
 
 from pyrevit import revit, DB, script
+from pyrevit.compat import get_elementid_value_func
+_EID_VALUE = get_elementid_value_func()   # ElementId.Value (2024+) or .IntegerValue (older)
 
 logger = script.get_logger()
 
@@ -1765,7 +1767,7 @@ def import_workbook(xlsx_path, view):
                         continue
                     fmt = part.rsplit(".", 1)[-1].lower() if "." in part else "png"
                     tmp_path = os.path.join(tempfile.gettempdir(),
-                                            "xl_img_{0}_{1}_{2}.{3}".format(view.Id.IntegerValue, i, abs(hash(part)), fmt))
+                                            "xl_img_{0}_{1}_{2}.{3}".format(_EID_VALUE(view.Id), i, abs(hash(part)), fmt))
                     DotNetFile.WriteAllBytes(tmp_path, data)
                     temp_image_paths.append(tmp_path)
                     options = DB.ImageTypeOptions(tmp_path, False, DB.ImageTypeSource.Import)

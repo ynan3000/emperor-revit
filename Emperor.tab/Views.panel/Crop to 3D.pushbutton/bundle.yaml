@@ -1,10 +1,13 @@
-title: Crop to 3D
+title:
+  en_us: Crop to 3D
 author: Yahya Morcy
-tooltip: >-
-  Turn an area of a plan view into a 3D view of only that area.
+tooltip:
+  en_us: >-
+    Turn an area of a plan view into a 3D view of only that area.
 
-  How: in a floor or ceiling plan press the button and drag a rectangle. A new 3D view opens, boxed to
-  that rectangle, from the bottom of the plan's view range up to just under the floor of the level above
-  (floors in linked models count too).
+    How: in a floor or ceiling plan press the button and drag a rectangle. A new 3D view opens, boxed to
+    that rectangle, from the bottom of the plan's view range up to just under the floor of the level above
+    (floors in linked models count too).
 engine:
   clean: true
+help_url: https://ynan3000.github.io/emperor-revit/#system-box

@@ -1,11 +1,14 @@
-title: Shortcut Guard
+title:
+  en_us: Shortcut Guard
 author: Yahya Morcy
 engine:
   persistent: true
-tooltip: >-
-  Keeps the keyboard in English while you work in Revit, so shortcuts work even when you use
-  Arabic (or another language) in other programs.
+tooltip:
+  en_us: >-
+    Keeps the keyboard in English while you work in Revit, so shortcuts work even when you use
+    Arabic (or another language) in other programs.
 
-  How: click to turn it ON / OFF (the icon shows a tick when ON). While ON, Revit switches to English
-  by itself; while you type text (text boxes, text notes, parameter values) your language is left
-  alone; when you leave Revit your previous language comes back. Remembered between sessions.
+    How: click to turn it ON / OFF (the icon shows a tick when ON). While ON, Revit switches to English
+    by itself; while you type text (text boxes, text notes, parameter values) your language is left
+    alone; when you leave Revit your previous language comes back. Remembered between sessions.
+help_url: https://ynan3000.github.io/emperor-revit/#toggles

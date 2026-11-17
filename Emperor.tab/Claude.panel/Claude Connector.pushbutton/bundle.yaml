@@ -1,9 +1,12 @@
-title: Claude Connector
+title:
+  en_us: Claude Connector
 author: Yahya Morcy
 version: 1.6.1
-tooltip: >-
-  Status and switches of the connection between Claude Desktop and this Revit session.
-  It connects by itself when Revit starts.
+tooltip:
+  en_us: >-
+    Status and switches of the connection between Claude Desktop and this Revit session.
+    It connects by itself when Revit starts.
 
-  How: check that all lights are green; switch Write access ON only when you want Claude to
-  change the model; Scripting access lets Claude run its own code (use with care).
+    How: check that all lights are green; switch Write access ON only when you want Claude to
+    change the model; Scripting access lets Claude run its own code (use with care).
+help_url: https://ynan3000.github.io/emperor-revit/#claude-connector

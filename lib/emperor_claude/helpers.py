@@ -54,11 +54,13 @@ def eid(n):
         return DB.ElementId(System.Int64(n))
 
 
+from pyrevit.compat import get_elementid_value_func as _get_eid_value_func
+_EID_VALUE = _get_eid_value_func()   # ElementId.Value (2024+) or .IntegerValue (older)
+
+
 def eint(i):
-    try:
-        return int(i.Value)
-    except AttributeError:
-        return int(i.IntegerValue)
+    """ElementId -> int on every Revit version."""
+    return int(_EID_VALUE(i))
 
 
 def one(doc, cls, name):

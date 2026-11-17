@@ -109,12 +109,12 @@ def _unzip(zip_path, target):
 def _download(url, dest):
     import clr
     clr.AddReference("System")
-    from System.Net import WebClient, ServicePointManager, SecurityProtocolType
+    from System.Net import WebClient, ServicePointManager, SecurityProtocolType  # compat-ignore: WebClient still works on .NET 8 (obsolete warning only); used once, to fetch the official Python from python.org
     try:
         ServicePointManager.SecurityProtocol = ServicePointManager.SecurityProtocol | SecurityProtocolType.Tls12
     except Exception:
         pass
-    client = WebClient()
+    client = WebClient()  # compat-ignore: WebClient still works on .NET 8 (obsolete warning only); used once, to fetch the official Python from python.org
     try:
         client.Headers.Add("User-Agent", "Emperor-Revit-Toolkit")
         client.DownloadFile(url, dest)

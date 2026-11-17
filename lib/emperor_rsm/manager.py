@@ -57,14 +57,15 @@ REVIT_DEFAULT_SPACE_NAME = u'space'
 
 
 # =============================================================== model helpers
+from pyrevit.compat import get_elementid_value_func as _get_eid_value_func
+_EID_VALUE = _get_eid_value_func()   # ElementId.Value (2024+) or .IntegerValue (older)
+
+
 def id_value(element_id):
     try:
-        return int(element_id.Value)
+        return int(_EID_VALUE(element_id))
     except Exception:
-        try:
-            return int(element_id.IntegerValue)
-        except Exception:
-            return -1
+        return -1
 
 
 def is_valid(element):

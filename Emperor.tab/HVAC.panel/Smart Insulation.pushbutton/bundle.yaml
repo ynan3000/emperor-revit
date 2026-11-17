@@ -1,11 +1,14 @@
-title: Smart Insulation
+title:
+  en_us: Smart Insulation
 author: Yahya Morcy
-tooltip: >-
-  Add, update or remove insulation on ducts and pipes by system type, in one go.
+tooltip:
+  en_us: >-
+    Add, update or remove insulation on ducts and pipes by system type, in one go.
 
-  How: tick the system types, choose the insulation type and thickness for each (a fixed value like 25,
-  or by size like "50:25, 150:40, 50" = up to 50 mm -> 25, up to 150 mm -> 40, bigger -> 50), choose the
-  scope (whole model, active view or selection) and press Preview, then Apply. One undo step.
-  Your choices are remembered per project.
+    How: tick the system types, choose the insulation type and thickness for each (a fixed value like 25,
+    or by size like "50:25, 150:40, 50" = up to 50 mm -> 25, up to 150 mm -> 40, bigger -> 50), choose the
+    scope (whole model, active view or selection) and press Preview, then Apply. One undo step.
+    Your choices are remembered per project.
 engine:
   clean: true
+help_url: https://ynan3000.github.io/emperor-revit/#smart-insulation

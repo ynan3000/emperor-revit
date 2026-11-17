@@ -1,0 +1,96 @@
+diff --git a/src/ACadSharp/IO/DWG/DwgStreamWriters/DwgObjectWriter.Entities.cs b/src/ACadSharp/IO/DWG/DwgStreamWriters/DwgObjectWriter.Entities.cs
+index 9fced40..6e21557 100644
+--- a/src/ACadSharp/IO/DWG/DwgStreamWriters/DwgObjectWriter.Entities.cs
++++ b/src/ACadSharp/IO/DWG/DwgStreamWriters/DwgObjectWriter.Entities.cs
+@@ -2069,7 +2069,7 @@ internal partial class DwgObjectWriter : DwgSectionIO
+ 		if (this.R2000Plus)
+ 		{
+ 			//Mode BS
+-			this._writer.WriteBitShort(0);
++			this._writer.WriteBitShort((short)(ole2Frame.IsPaperSpace ? 1 : 0));   // Emperor patch: 0 = model space, 1 = paper space
+ 		}
+ 
+ 		//Common:
+diff --git a/src/ACadSharp/IO/DWG/DwgStreamWriters/DwgObjectWriter.Objects.cs b/src/ACadSharp/IO/DWG/DwgStreamWriters/DwgObjectWriter.Objects.cs
+index eb4b373..3972c41 100644
+--- a/src/ACadSharp/IO/DWG/DwgStreamWriters/DwgObjectWriter.Objects.cs
++++ b/src/ACadSharp/IO/DWG/DwgStreamWriters/DwgObjectWriter.Objects.cs
+@@ -1315,7 +1315,7 @@ internal partial class DwgObjectWriter : DwgSectionIO
+ 		//Limmin 2RD 10 layout minimum limits
+ 		this._writer.Write2RawDouble(layout.MinLimits);
+ 		//Limmax 2RD 11 layout maximum limits
+-		this._writer.Write2RawDouble(layout.MinLimits);
++		this._writer.Write2RawDouble(layout.MaxLimits);
+ 		//Inspoint 3BD 12 layout insertion base point
+ 		this._writer.Write3BitDouble(layout.InsertionBasePoint);
+ 		this._writer.Write3BitDouble(layout.XAxis);
+@@ -1357,7 +1357,7 @@ internal partial class DwgObjectWriter : DwgSectionIO
+ 		//R2004+:
+ 		if (this.R2004Plus)
+ 		{
+-			foreach (Entities.Viewport viewport in layout.Viewports)
++			foreach (Entities.Viewport viewport in layout.OrderedViewports)
+ 			{
+ 				//Viewport handle(repeats Viewport count times) (soft pointer)
+ 				this._writer.HandleReference(DwgReferenceType.SoftPointer, viewport);
+diff --git a/src/ACadSharp/IO/Templates/CadLayoutTemplate.cs b/src/ACadSharp/IO/Templates/CadLayoutTemplate.cs
+index 4e2917f..3f3792b 100644
+--- a/src/ACadSharp/IO/Templates/CadLayoutTemplate.cs
++++ b/src/ACadSharp/IO/Templates/CadLayoutTemplate.cs
+@@ -17,7 +17,7 @@ namespace ACadSharp.IO.Templates
+ 
+ 		public ulong? LasActiveViewportHandle { get; set; }
+ 
+-		public HashSet<ulong> ViewportHandles { get; set; } = new();
++		public List<ulong> ViewportHandles { get; set; } = new();   // Emperor patch: keep the order
+ 
+ 		public CadLayoutTemplate() : base(new Layout()) { }
+ 
+@@ -51,6 +51,9 @@ namespace ACadSharp.IO.Templates
+ 			{
+ 				if (builder.TryGetCadObject<Viewport>(handle, out Viewport vp))
+ 				{
++					// Emperor patch: the order of this list matters - its first viewport is the one that
++					// stands for the paper itself. It is kept so the file can be written back unchanged.
++					if (!this.CadObject.ViewportOrder.Contains(vp)) this.CadObject.ViewportOrder.Add(vp);
+ 					//Is repeated, the viewports are already in the entities list in the BLOCK_RECORD
+ 					// if(this.CadObject.AssociatedBlock.Viewports.Contains(vp))
+ 				}
+diff --git a/src/ACadSharp/Objects/Layout.cs b/src/ACadSharp/Objects/Layout.cs
+index 1aff1e8..ebcc3a5 100644
+--- a/src/ACadSharp/Objects/Layout.cs
++++ b/src/ACadSharp/Objects/Layout.cs
+@@ -183,6 +183,33 @@ public class Layout : PlotSettings, IDxfClassDefined
+ 	/// <summary>
+ 	/// Gets the collection of viewports associated with this instance.
+ 	/// </summary>
++	/// <summary>
++	/// Emperor patch: viewports in the order the layout listed them in the file that was read
++	/// (the first one represents the paper). Empty for a layout created in code.
++	/// </summary>
++	public List<Viewport> ViewportOrder { get; } = new List<Viewport>();
++
++	/// <summary>
++	/// Emperor patch: the viewports of the layout, in the order they must be written.
++	/// </summary>
++	public IEnumerable<Viewport> OrderedViewports
++	{
++		get
++		{
++			var all = this.Viewports == null ? new List<Viewport>() : this.Viewports.ToList();
++			var result = new List<Viewport>();
++			foreach (Viewport v in this.ViewportOrder)
++			{
++				if (all.Contains(v) && !result.Contains(v)) result.Add(v);
++			}
++			foreach (Viewport v in all)
++			{
++				if (!result.Contains(v)) result.Add(v);
++			}
++			return result;
++		}
++	}
++
+ 	public IEnumerable<Viewport> Viewports
+ 	{
+ 		get

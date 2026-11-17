@@ -1,4 +1,7 @@
-title: Instructions
+title:
+  en_us: Instructions
 author: Yahya Morcy
-tooltip: >-
-  Open the Emperor user guide: install, every tool step by step, tips and troubleshooting.
+tooltip:
+  en_us: >-
+    Open the Emperor user guide: install, every tool step by step, tips and troubleshooting.
+help_url: https://ynan3000.github.io/emperor-revit/#install

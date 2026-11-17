@@ -9,11 +9,13 @@ from Autodesk.Revit import DB
 FT_PER_MM = 1.0 / 304.8
 
 
+from pyrevit.compat import get_elementid_value_func as _get_eid_value_func
+_EID_VALUE = _get_eid_value_func()   # ElementId.Value (2024+) or .IntegerValue (older)
+
+
 def eid_int(eid):
-    try:
-        return int(eid.Value)          # Revit 2024+
-    except AttributeError:
-        return int(eid.IntegerValue)
+    """ElementId -> int on every Revit version."""
+    return int(_EID_VALUE(eid))
 
 
 def make_eid(n):

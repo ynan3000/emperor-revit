@@ -1,8 +1,11 @@
-title: Excel to Drafting
+title:
+  en_us: Excel to Drafting
 author: Yahya Morcy
-tooltip: >-
-  Import an Excel print area into a Revit drafting view: cell colours, fonts, alignment, merged
-  cells, borders and images.
+tooltip:
+  en_us: >-
+    Import an Excel print area into a Revit drafting view: cell colours, fonts, alignment, merged
+    cells, borders and images.
 
-  How: set the Print Area in Excel and save; press the button, Add files..., choose "Create new"
-  or "Update existing" view, then Import.
+    How: set the Print Area in Excel and save; press the button, Add files..., choose "Create new"
+    or "Update existing" view, then Import.
+help_url: https://ynan3000.github.io/emperor-revit/#excel-to-drafting

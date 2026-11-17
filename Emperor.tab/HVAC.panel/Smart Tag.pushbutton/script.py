@@ -238,7 +238,7 @@ class Window(object):
             return
         lines = [u'Moved by you: %d' % rep['moved'], u'Left where they were: %d' % rep['kept'],
                  u'Placed by hand: %d' % rep['hand'], u'Deleted by you (ignored): %d' % rep['deleted'], u'']
-        for sit, n in sorted(rep['situations'].items()):
+        for sit, n in sorted(rep['situations'].items(), key=lambda kv: kv[0]):
             lines.append(u'  %s: %d tag(s)' % (sit, n))
         lines.append(u'')
         lines.append(u'Next time Smart Tag tries these spots first (tick "Use the spots learned from me").')

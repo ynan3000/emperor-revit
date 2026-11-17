@@ -1,13 +1,16 @@
-title: Room & Space Manager
+title:
+  en_us: Room & Space Manager
 author: Yahya Morcy
 version: 2.2.0
-tooltip: >-
-  Host and linked rooms / spaces in one table. Bulk find / replace names and numbers, create
-  spaces on every level with names and numbers from the (linked) rooms, delete unnamed spaces,
-  recenter space points for tags.
+tooltip:
+  en_us: >-
+    Host and linked rooms / spaces in one table. Bulk find / replace names and numbers, create
+    spaces on every level with names and numbers from the (linked) rooms, delete unnamed spaces,
+    recenter space points for tags.
 
-  How: pick the ROOMS or SPACES tab, filter the table, choose "Apply to" (all / filtered /
-  selected rows) and use the tools on the right. Double-click a row to select it in Revit.
+    How: pick the ROOMS or SPACES tab, filter the table, choose "Apply to" (all / filtered /
+    selected rows) and use the tools on the right. Double-click a row to select it in Revit.
 min_revit_version: 2024
 engine:
   persistent: true
+help_url: https://ynan3000.github.io/emperor-revit/#room-space-manager
