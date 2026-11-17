@@ -33,7 +33,7 @@
   "applicationSubCategory": "Autodesk Revit add-in (pyRevit extension)",
   "operatingSystem": "Windows",
   "softwareRequirements": "Autodesk Revit 2025 or newer, pyRevit",
-  "softwareVersion": "1.6.2",
+  "softwareVersion": "1.6.3",
   "license": "https://opensource.org/licenses/MIT",
   "isAccessibleForFree": true,
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
@@ -52,7 +52,7 @@
   "mainEntity": [
     {"@type": "Question", "name": "Is Emperor for Revit free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Emperor is free and open source under the MIT License. You can use it at work, change it and share it."}},
     {"@type": "Question", "name": "Which Revit version does Emperor support?", "acceptedAnswer": {"@type": "Answer", "text": "Emperor is tested on Revit 2025 with pyRevit 7. Most tools are plain pyRevit scripts; the DWG option that binds images as OLE needs Revit 2025 or newer."}},
-    {"@type": "Question", "name": "How do I install Emperor?", "acceptedAnswer": {"@type": "Answer", "text": "Install pyRevit, download Emperor_v1.6.2.zip from GitHub releases, extract it into your pyRevit extensions folder so you get Emperor.extension, then start Revit or reload pyRevit."}},
+    {"@type": "Question", "name": "How do I install Emperor?", "acceptedAnswer": {"@type": "Answer", "text": "Install pyRevit, download Emperor_v1_6_3.zip from GitHub releases, extract it into your pyRevit extensions folder so you get Emperor.extension, then start Revit or reload pyRevit."}},
     {"@type": "Question", "name": "Does Emperor need AutoCAD to put images inside DWG files?", "acceptedAnswer": {"@type": "Answer", "text": "No. The Emperor Exporter binds sheet images into the DWG as OLE objects with its own library, without AutoCAD."}}
   ]
 }
@@ -105,7 +105,7 @@ footer{background:#2a0a0d;color:#f3d6d8;padding:34px 0;font-size:15px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
 footer a{color:#fff}
 @media(max-width:640px){header.top nav a:not(.btn-s){display:none}}
-</style>
+.card{scroll-margin-top:80px}</style>
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -120,7 +120,7 @@ footer a{color:#fff}
   <p class="lead">A free pyRevit toolkit for engineers – especially MEP &amp; HVAC. Sixteen tools that turn hours of clicking in Revit into seconds.</p>
   <p class="ar" dir="rtl">إضافة مجانية ومفتوحة المصدر لـ Revit، لكل المهندسين وخصوصاً مهندسين الميكانيكا.</p>
   <div class="cta">
-    <a class="btn w" href="https://github.com/ynan3000/emperor-revit/releases/latest">⬇ Download free (v1.6.2)</a>
+    <a class="btn w" href="https://github.com/ynan3000/emperor-revit/releases/latest">⬇ Download free (v1.6.3)</a>
     <a class="btn o" href="https://www.youtube.com/playlist?list=PLGEBasj0nHd8">▶ Watch the 12-part series</a>
   </div>
   <div class="badges">Revit 2025 · pyRevit 7 · Windows · MIT License · <a href="https://github.com/ynan3000/emperor-revit" style="color:#fff">Source on GitHub</a></div>
@@ -130,62 +130,62 @@ footer a{color:#fff}
   <h2>The tools</h2>
   <p class="sub">One <b>Emperor</b> tab in Revit. Every tool has a short video.</p>
   <div class="grid">
-    <article class="card"><img loading="lazy" src="img/tool01.jpg" alt="Grille Align in Revit spacing air grilles evenly">
+    <article class="card" id="grille-align"><img loading="lazy" src="img/tool01.jpg" alt="Grille Align in Revit spacing air grilles evenly">
       <div class="b"><span class="tag">HVAC</span><h3>Grille Align &amp; Horizontal / Vertical Align</h3>
       <p>Space grilles evenly against a wall or any reference, even in a linked model: x from the wall, 2x between grilles. Line them up on one axis.</p>
       <p class="ar">توزيع الجريلات بمسافات متساوية ورصّها على خط واحد.</p>
       <a class="v" href="https://www.youtube.com/watch?v=9QMJPErM2Ao&list=PLGEBasj0nHd8">▶ Watch (1:13)</a></div></article>
-    <article class="card"><img loading="lazy" src="img/tool02.jpg" alt="Diffuser Array completing a row of supply and return diffusers">
+    <article class="card" id="diffuser-array"><img loading="lazy" src="img/tool02.jpg" alt="Diffuser Array completing a row of supply and return diffusers">
       <div class="b"><span class="tag">HVAC</span><h3>Diffuser Array</h3>
       <p>Place one or two diffusers and the tool completes the row – one type or alternating supply / return – with your count, spacing and direction.</p>
       <p class="ar">حط ديفيوزر أو اتنين والأداة تكمّل الصف.</p>
       <a class="v" href="https://www.youtube.com/watch?v=7pvVpgqM_BY&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
-    <article class="card"><img loading="lazy" src="img/tool03.jpg" alt="Smart Insulation dialog for duct and pipe systems">
+    <article class="card" id="smart-insulation"><img loading="lazy" src="img/tool03.jpg" alt="Smart Insulation dialog for duct and pipe systems">
       <div class="b"><span class="tag">HVAC</span><h3>Smart Insulation</h3>
       <p>Insulation type and thickness per duct and pipe system, for the whole model, the active view or a selection. Adds what is missing, updates the rest, and reports.</p>
       <p class="ar">عزل كل الدكت والمواسير مرة واحدة.</p>
       <a class="v" href="https://www.youtube.com/watch?v=ugSK96zflLU&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
-    <article class="card"><img loading="lazy" src="img/tool04.jpg" alt="Smart Tag tagging ducts and air terminals without overlaps">
+    <article class="card" id="smart-tag"><img loading="lazy" src="img/tool04.jpg" alt="Smart Tag tagging ducts and air terminals without overlaps">
       <div class="b"><span class="tag">HVAC</span><h3>Smart Tag</h3>
       <p>Tags every duct, terminal and equipment in the view without overlaps. <b>Learn from my changes</b>: move a few tags by hand and it places the rest your way.</p>
       <p class="ar">تاجات للفيو كله من غير ما تركب على بعض، وبتتعلم من تعديلاتك.</p>
       <a class="v" href="https://www.youtube.com/watch?v=Z1AoTgrZBYo&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
-    <article class="card"><img loading="lazy" src="img/tool05.jpg" alt="System Box 3D view of a single duct system">
+    <article class="card" id="system-box"><img loading="lazy" src="img/tool05.jpg" alt="System Box 3D view of a single duct system">
       <div class="b"><span class="tag">Views</span><h3>System Box &amp; Crop to 3D</h3>
       <p>Open a 3D view of just one system, or draw a rectangle on a plan and see that area in 3D.</p>
       <p class="ar">شوف أي سيستم أو أي منطقة في 3D فوراً.</p>
       <a class="v" href="https://www.youtube.com/watch?v=gd7u9qhaN9o&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
-    <article class="card"><img loading="lazy" src="img/tool06.jpg" alt="View Manager creating floor plans for every level">
+    <article class="card" id="view-manager"><img loading="lazy" src="img/tool06.jpg" alt="View Manager creating floor plans for every level">
       <div class="b"><span class="tag">Views</span><h3>View Manager</h3>
       <p>Floor, ceiling and structural plans for every level in one go, with prefix, suffix and view template. Existing views: skip, rename or create new.</p>
       <p class="ar">Plans لكل الأدوار مرة واحدة.</p>
       <a class="v" href="https://www.youtube.com/watch?v=J5X7eD6ITug&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
-    <article class="card"><img loading="lazy" src="img/tool07.jpg" alt="Room and Space Manager table in Revit">
+    <article class="card" id="room-space-manager"><img loading="lazy" src="img/tool07.jpg" alt="Room and Space Manager table in Revit">
       <div class="b"><span class="tag">Room &amp; Space</span><h3>Room &amp; Space Manager</h3>
       <p>All rooms (linked too) and spaces in one table: bulk rename, renumber and heights, find &amp; replace, match spaces to rooms, create spaces on every level.</p>
       <p class="ar">كل الـ Rooms والـ Spaces في جدول واحد.</p>
       <a class="v" href="https://www.youtube.com/watch?v=uWj1T2FWXXg&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
-    <article class="card"><img loading="lazy" src="img/tool08.jpg" alt="Link Manager copying Revit links to another model">
+    <article class="card" id="link-manager"><img loading="lazy" src="img/tool08.jpg" alt="Link Manager copying Revit links to another model">
       <div class="b"><span class="tag">Links</span><h3>Link Manager</h3>
       <p>Every Revit link on one screen: status, instances, pin / unpin / reload all. Copy links to another model with the same shared coordinates and locations.</p>
       <p class="ar">كل الـ Links في شاشة واحدة، ونسخها لموديل تاني.</p>
       <a class="v" href="https://www.youtube.com/watch?v=iGpuJmGZzNo&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
-    <article class="card"><img loading="lazy" src="img/tool09.jpg" alt="Excel table imported into a Revit drafting view with colours">
+    <article class="card" id="excel-to-drafting"><img loading="lazy" src="img/tool09.jpg" alt="Excel table imported into a Revit drafting view with colours">
       <div class="b"><span class="tag">Import</span><h3>Excel to Drafting</h3>
       <p>Bring an Excel print area into a drafting view, keeping colours, fonts and merged cells.</p>
       <p class="ar">جدول الإكسل جوه Revit بنفس شكله.</p>
       <a class="v" href="https://www.youtube.com/watch?v=LlYSj4nS8I0&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
-    <article class="card"><img loading="lazy" src="img/tool10.jpg" alt="Emperor Exporter for PDF and DWG export">
+    <article class="card" id="emperor-exporter"><img loading="lazy" src="img/tool10.jpg" alt="Emperor Exporter for PDF and DWG export">
       <div class="b"><span class="tag">Export</span><h3>Emperor Exporter</h3>
       <p>PDF, DWG, DXF, DGN, DWF, IFC, NWC and images from one screen. DWG with images bound inside (OLE, no AutoCAD needed), black-line PDFs without touching the model.</p>
       <p class="ar">كل الصيغ من شاشة واحدة، وDWG بالصور جوه الملف.</p>
       <a class="v" href="https://www.youtube.com/watch?v=-5-IUf1h95c&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
-    <article class="card"><img loading="lazy" src="img/tool11.jpg" alt="Claude Connector linking Revit to Claude Desktop">
+    <article class="card" id="claude-connector"><img loading="lazy" src="img/tool11.jpg" alt="Claude Connector linking Revit to Claude Desktop">
       <div class="b"><span class="tag">AI</span><h3>Claude Connector</h3>
       <p>Connect Revit to Claude Desktop. Claude reads the open model, does a dry run and asks before changing anything; one Ctrl+Z undoes it. You control write and scripting access.</p>
       <p class="ar">Claude يقرا الموديل ويشتغل عليه، بإذنك.</p>
       <a class="v" href="https://www.youtube.com/watch?v=TIIqx_2DvDA&list=PLGEBasj0nHd8">▶ Watch</a></div></article>
-    <article class="card"><img loading="lazy" src="img/tool12.jpg" alt="Sync Views keeping zoom between floor plans">
+    <article class="card" id="toggles"><img loading="lazy" src="img/tool12.jpg" alt="Sync Views keeping zoom between floor plans">
       <div class="b"><span class="tag">Toggles</span><h3>Sync Views &amp; Shortcut Guard</h3>
       <p>Keep zoom and position while switching plans – even after visiting a section. Keep the keyboard in English whenever Revit is active so shortcuts always work.</p>
       <p class="ar">تفاصيل صغيرة بتريّحك طول اليوم.</p>
@@ -204,7 +204,7 @@ footer a{color:#fff}
   <p class="sub">Works with Autodesk Revit and <a href="https://github.com/pyrevitlabs/pyRevit">pyRevit</a>.</p>
   <ol class="steps">
     <li><b>Install pyRevit</b><br>Get it from the pyRevit GitHub page if you do not have it yet.</li>
-    <li><b>Download Emperor</b><br><a href="https://github.com/ynan3000/emperor-revit/releases/latest">Emperor_v1.6.2.zip</a> from GitHub releases.</li>
+    <li><b>Download Emperor</b><br><a href="https://github.com/ynan3000/emperor-revit/releases/latest">Emperor_v1_6_3.zip</a> from GitHub releases.</li>
     <li><b>Extract</b><br>Into your pyRevit extensions folder, so you get <code>Emperor.extension</code>.</li>
     <li><b>Start Revit</b><br>Or pyRevit &gt; Reload. The <b>Emperor</b> tab appears.</li>
   </ol>
